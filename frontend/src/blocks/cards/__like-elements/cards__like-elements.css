@@ -1,0 +1,9 @@
+.cards__like-elements {
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 21px;
+}

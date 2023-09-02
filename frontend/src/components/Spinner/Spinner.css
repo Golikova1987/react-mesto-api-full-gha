@@ -1,0 +1,12 @@
+.spinner {
+  width: 200px;
+  height: 200px;
+  background-image: url(../../images/loading.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-self: start;
+  justify-self: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
