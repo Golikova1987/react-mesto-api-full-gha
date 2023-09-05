@@ -110,6 +110,7 @@ class Api {
 const api = new Api({
   // baseUrl: "https://mesto.nomoreparties.co/v1/cohort-66",
   baseUrl: "http://localhost:3000",
+  // baseUrl: "https://conejito.practicum.nomoredomainsicu.ru",
   // headers: {
   //   authorization: "4794d416-5184-43be-8376-438ba82ab5d1",
   //   "Content-Type": "application/json",

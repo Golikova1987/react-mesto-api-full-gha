@@ -7,7 +7,7 @@ export default function Card({ card, onCardClick, onCardDelete }) {
   
   return (
     <article className="cards__element">
-      {currentUser._id === card.owner._id && <button className="cards__button-delete" type="button" onClick={() => onCardDelete(card._id)}/>}
+      {currentUser._id === card.owner && <button className="cards__button-delete" type="button" onClick={() => onCardDelete(card._id)}/>}
       <img
         className="cards__photo"
         src={card.link}
