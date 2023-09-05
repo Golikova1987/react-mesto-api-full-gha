@@ -177,6 +177,7 @@ function App() {
     api
       .addCard(data, localStorage.jwt)
       .then((res) => {
+        // console.dir(res);
         setCards([res, ...cards]);
         closeAllPopups();
         reset();

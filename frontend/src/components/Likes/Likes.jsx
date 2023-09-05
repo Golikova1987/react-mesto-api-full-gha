@@ -13,6 +13,7 @@ export default function Likes({ likes, myid, cardid}) {
     if (isLike) {
       api.deleteLike(cardid, localStorage.jwt)
         .then(res => {
+          // console.dir(res);
           setIsLike(false)
           setCount(res.likes.length)
         })
