@@ -172,13 +172,28 @@ function App() {
       .finally(() => setIsLoadingSubmit(false));
   }
 
+  // function handleAddPlaceSubmit(data, reset) {
+  //   setIsLoadingSubmit(true);
+  //   api
+  //     .addCard(data, localStorage.jwt)
+  //     .then((res) => {
+  //       // console.dir(res);
+  //       setCards([res, ...cards]);
+  //       closeAllPopups();
+  //       reset();
+  //       setIsLoadingSubmit(false);
+  //     })
+  //     .catch((err) => console.error(`Ошибка добавления карточки ${err}`))
+  //     .finally(() => setIsLoadingSubmit(false));
+  // }
+
   function handleAddPlaceSubmit(data, reset) {
     setIsLoadingSubmit(true);
     api
       .addCard(data, localStorage.jwt)
-      .then((res) => {
-        // console.dir(res);
-        setCards([res, ...cards]);
+      .then(({ data }) => {
+        // console.dir(data);
+        setCards([data, ...cards]);
         closeAllPopups();
         reset();
         setIsLoadingSubmit(false);
@@ -186,6 +201,7 @@ function App() {
       .catch((err) => console.error(`Ошибка добавления карточки ${err}`))
       .finally(() => setIsLoadingSubmit(false));
   }
+
 
   function handleRegister(value) {
     const { email, password } = value;
