@@ -107,9 +107,29 @@ function App() {
         .catch((err) => console.error(`Ошибка при загрузке ${err}`));
   }, [loggedIn]);
 
+  // useEffect(() => {
+  //   const tokenCheck = () => {
+  //     const token = localStorage.getItem("jwt");
+  //     auth
+  //       .getContent(token)
+  //       .then((res) => {
+  //         if (res) {
+  //           setLoggedIn(true);
+  //           navigate("/");
+  //           setUserEmail(res.email);
+  //         }
+  //       })
+  //       .catch((err) =>
+  //         console.error(`Ошибка авторизации при повторном входе ${err}`)
+  //       );
+  //   };
+  //   tokenCheck();
+  // }, [navigate]);
+
   useEffect(() => {
     const tokenCheck = () => {
-      const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("jwt");
+    if (token) {
       auth
         .getContent(token)
         .then((res) => {
@@ -123,6 +143,7 @@ function App() {
           console.error(`Ошибка авторизации при повторном входе ${err}`)
         );
     };
+  };
     tokenCheck();
   }, [navigate]);
 
